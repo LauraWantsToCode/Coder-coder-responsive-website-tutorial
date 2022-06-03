@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box; 
+}
+
+main, header, section, aside, footer {
+    margin: 0; 
+    padding: 10px; 
+    border: 1px solid #42373D; 
+    }
+
+main {
+    background: #ddc8cf;
+}
+
+.header {
+    background: #9A7EA6;
+}
+
+.hero {
+    background:  #FDE2B1;
+}
+
+.content {
+    background: #F8B2A1;
+
+}
+
+.sidebar {
+    background: #C4889F;
+    border: 1px solid #42373D; 
+}
+
+.footer {
+    background: #9A7EA6;
+    border: 1px solid #42373D; 
+}
+
+@media screen and (min-width: 640px) {
+    .flex-container {
+        display: flex;
+    }
+
+    /* We want the Content width to be calculated by flexbox,
+    so we’ll set it to flex: 1, which is shorthand for flex-grow: 1,
+     flex-shrink: 1, and flex-basis: 0%. */
+
+    .content {
+        flex: 1;
+    }
+
+    /* On the Sidebar, to set its width to 300px, we will 
+    use flex: 0 1 300px. According to CSS-Tricks, that last property,
+     flex-basis, “defines the default size of an element
+      before the remaining space is distributed.”
+
+This will ensure that the Sidebar will always be 300px, 
+and the rest of the space will be distributed to the Content section. */
+    .sidebar {
+        flex: 0 1 300px;
+    }
+
+    /* This will set the max-width of the element to 1200px
+     (converted into rem units), and also center it on widths larger than 1200px.
+
+In the HTML we will add the wrapper class to the flex-container wrapper, 
+since we want to limit the width for the Content and Sidebar container. */
+    .wrapper {
+        margin: auto;
+        max-width: 75rem;
+        /* 1rem equals the font size of the html element, which for most browsers has a default value of 16px. */
+    }
+}
